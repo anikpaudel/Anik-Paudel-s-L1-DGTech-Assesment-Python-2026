@@ -1,6 +1,11 @@
 print("Hello Welcome to the game made by Anik Paudel ")
 name=input("What is your name?")
-
+if name == "":
+    name(input (("Please enter your name:")))
+    print (name)
+elif name==" ":
+    name(input (("Please enter your name:")))
+    print (name)
 
 # Check that users have entered a valid 
 # option based on a list
@@ -26,22 +31,17 @@ def string_checker(question, valid_ans =("yes" , "no" )):
         print(eror)
         print()
 
-
-
-
-
-
 def instructions():
     """ Prints instructions """
 
     print("""
         ***Instructions***
-           To play Rock, Paper, Scissors, you must choose one of three symbols: Rock (a fist), Paper (a flat hand), or Scissors (index and middle fingers extended). Once you make your selection, the computer will simultaneously reveal its choice. The winner is determined by these rules: Rock crushes Scissors, Scissors cut Paper, and Paper covers Rock. If both you and the computer choose the same symbol, the round is a tie, and you should play again to find a winner.
+           You chose a symbol just do math question and write answer and if it is corrrect it will say congrats if it is not correct it will say Do better next time 
 
    """ )
 #main routine
 print()
-print("Maths Blitz")
+print("Welcome to Maths Blitz")
 print()
 
 #ask the user if they want to see the instructions 
@@ -53,6 +53,7 @@ if want_instructions== "yes":
    
 print()
 print("Program Continues")
+
 
 input(f"{name} How many question you would like to answer ?")
 
