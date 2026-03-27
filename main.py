@@ -41,10 +41,10 @@ def instructions():
    """ )
 #main routine
 print()
-print("Welcome to Maths Blitz")
+print(f"Welcome to Maths Blitz {name}")
 print()
 
-#ask the user if they want to see the instructions 
+#ask the user if they want to see the instructions              
 want_instructions = string_checker("Do you want to see the instructions?")
 
 #display the instructions if user wants to see them
@@ -55,7 +55,12 @@ print()
 print("Program Continues")
 
 
-input(f"{name} How many question you would like to answer ?")
+no_of_question =input(f"{name} How many question you would like to answer ?")
+if no_of_question == "":
+ print ("please enter and valid no of question")
+else:
+    print("okay What kind of questions would you like to answer?")
+
 
 
 
