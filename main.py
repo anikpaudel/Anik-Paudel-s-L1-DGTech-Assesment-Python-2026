@@ -1,11 +1,9 @@
+import random 
+import operator
+
 print("Hello Welcome to the game made by Anik Paudel ")
 name=input("What is your name?")
-if name == "":
-    name(input (("Please enter your name:")))
-    print (name)
-elif name==" ":
-    name(input (("Please enter your name:")))
-    print (name)
+
 
 # Check that users have entered a valid 
 # option based on a list
@@ -36,9 +34,11 @@ def instructions():
 
     print("""
         ***Instructions***
-           You chose a symbol just do math question and write answer and if it is corrrect it will say congrats if it is not correct it will say Do better next time 
+        You will do math questions and write answer .
+        You will choose how many questions you would like to do. 
+        You will get your score at last.Every correct question is +5 score.""" )
 
-   """ )
+
 #main routine
 print()
 print(f"Welcome to Maths Blitz {name}")
@@ -52,14 +52,177 @@ if want_instructions== "yes":
  instructions ()
    
 print()
-print("Program Continues")
+print("The Game starts ")
+
+def random_problem():
+    operators = {
+        '+' : operator.add,
+        '-' : operator.sub,
+        }
+#generating two random numbers      
+    num_1 = random.randint(1,9)
+    num_2 = random.randint(1,9)
+    operation = random.choice(list(operators.keys()))
+    if operation == '-':
+            
+                if num_1 < num_2:
+                    num_1, num_2 = num_2, num_1  # swap them
 
 
-no_of_question =input(f"{name} How many question you would like to answer ?")
-if no_of_question == "":
- print ("please enter and valid no of question")
-else:
-    print("okay What kind of questions would you like to answer?")
+    answer = operators.get(operation)(num_1,num_2)
+    question = f"{num_1} {operation} {num_2}"
+    print(f'What is {question} ?')
+    return answer ,question 
+    
+
+def ask_question():
+    answer=random_problem()
+    guess =float(input('Enter Your Answer :'))
+    return guess == answer
+#generating the final score  
+def game():
+    score = 0
+    history = []
+    for i in range(num_questions):
+        answer, question = random_problem()
+        guess = float(input('Enter Your Answer :'))
+        if guess == answer:
+            score += 5
+            print('😊😁🥳CORRECT😊😁🥳')
+            history.append(f"{i+1}) {question} = {int(answer)}  correct")
+        else:
+            print('😢😭😔Incorrect😢😭😔')
+            history.append(f"{i+1}) {question} = {int(answer)}  incorrect")
+    
+    print("\n===Game history=====")
+    for record in history:
+        print(record)
+    print(f'======Game over {name} =======\nYour score is {score}\nYou did great {name} ')
+
+while True:
+   num_questions = int(input("How many questions do you want  ? (1-20): "))
+   if 1 <= num_questions <= 20:
+    break
+   else:
+    print("Please enter a number between 1 and 20!")
+
+
+
+game()
+
+
+
+
+
+                        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
