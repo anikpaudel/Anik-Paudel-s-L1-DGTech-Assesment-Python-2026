@@ -97,7 +97,10 @@ def game():
     print("\n===Game history=====")
     for record in history:
         print(record)
-    print(f'======Game over {name} =======\nYour score is {score}\nYou did great {name} ')
+    print(f'======Game over {name} =======\nYour Final score is {score}\nYou did great {name} ')
+
+    percentage = (score / (num_questions * 5)) * 100
+    print(f"You got {percentage:.0f}%")
 
 while True:
    num_questions = int(input("How many questions do you want  ? (1-20): "))
